@@ -7,15 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE3CF9B628324160000C8A56 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = EE3CF9B528324160000C8A56 /* SwiftMessages */; };
+		EE3CF9B828324189000C8A56 /* NotificationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3CF9B728324189000C8A56 /* NotificationsHelper.swift */; };
+		EE3CF9BA2832572D000C8A56 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3CF9B92832572D000C8A56 /* SearchCoordinator.swift */; };
+		EE3CF9BC2832573C000C8A56 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3CF9BB2832573C000C8A56 /* AppCoordinator.swift */; };
+		EE3CF9BF28325785000C8A56 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3CF9BE28325785000C8A56 /* Coordinator.swift */; };
+		EE3CF9C228326261000C8A56 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3CF9C128326261000C8A56 /* FollowViewController.swift */; };
+		EE3CF9C428326291000C8A56 /* FollowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3CF9C328326291000C8A56 /* FollowCoordinator.swift */; };
+		EE3CF9CE28328315000C8A56 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3CF9CD28328315000C8A56 /* Logger.swift */; };
+		EE3CF9D12832847A000C8A56 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = EE3CF9D02832847A000C8A56 /* Logging */; };
+		EE3CF9D3283290C1000C8A56 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3CF9D2283290C1000C8A56 /* RoundedImageView.swift */; };
+		EE3CF9D82832C558000C8A56 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3CF9D72832C558000C8A56 /* Theme.swift */; };
 		EECB70A82830F829002A0DCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70A72830F829002A0DCD /* AppDelegate.swift */; };
-		EECB70AA2830F829002A0DCD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70A92830F829002A0DCD /* SceneDelegate.swift */; };
-		EECB70AC2830F829002A0DCD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70AB2830F829002A0DCD /* ViewController.swift */; };
-		EECB70AF2830F82A002A0DCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECB70AD2830F82A002A0DCD /* Main.storyboard */; };
+		EECB70AC2830F829002A0DCD /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70AB2830F829002A0DCD /* BaseTableViewController.swift */; };
 		EECB70B12830F82B002A0DCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECB70B02830F82B002A0DCD /* Assets.xcassets */; };
 		EECB70B42830F82B002A0DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECB70B22830F82B002A0DCD /* LaunchScreen.storyboard */; };
 		EECB70BF2830F82B002A0DCD /* GitHubUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70BE2830F82B002A0DCD /* GitHubUserTests.swift */; };
 		EECB70C92830F82B002A0DCD /* GitHubUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70C82830F82B002A0DCD /* GitHubUserUITests.swift */; };
 		EECB70CB2830F82B002A0DCD /* GitHubUserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70CA2830F82B002A0DCD /* GitHubUserUITestsLaunchTests.swift */; };
+		EECB70D92830FF0C002A0DCD /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EECB70D82830FF0C002A0DCD /* RxCocoa */; };
+		EECB70DB2830FF0C002A0DCD /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EECB70DA2830FF0C002A0DCD /* RxSwift */; };
+		EECB70DE283125F4002A0DCD /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70DD283125F4002A0DCD /* ViewModelType.swift */; };
+		EECB70E128312632002A0DCD /* PaginationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70E028312632002A0DCD /* PaginationType.swift */; };
+		EECB70E328312D89002A0DCD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70E228312D89002A0DCD /* SearchViewModel.swift */; };
+		EECB70E8283142B9002A0DCD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70E7283142B9002A0DCD /* APIError.swift */; };
+		EECB70EA28314793002A0DCD /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70E928314793002A0DCD /* GitHubService.swift */; };
+		EECB70F328316A4D002A0DCD /* GitHubTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70F228316A4D002A0DCD /* GitHubTarget.swift */; };
+		EECB70F52831758C002A0DCD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70F42831758C002A0DCD /* User.swift */; };
+		EECB710028317F7F002A0DCD /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = EECB70FF28317F7F002A0DCD /* Moya */; };
+		EECB710228317F7F002A0DCD /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = EECB710128317F7F002A0DCD /* RxMoya */; };
+		EECB710528318333002A0DCD /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB710428318333002A0DCD /* SearchResponse.swift */; };
+		EECB71072832223B002A0DCD /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB71062832223B002A0DCD /* CellType.swift */; };
+		EECB710928322249002A0DCD /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB710828322249002A0DCD /* UserCell.swift */; };
+		EECB710C28323141002A0DCD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB710B28323141002A0DCD /* SearchViewController.swift */; };
+		EECB710F28323400002A0DCD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EECB710E28323400002A0DCD /* Kingfisher */; };
+		EECB711128323A94002A0DCD /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB711028323A94002A0DCD /* UIKit+Extensions.swift */; };
+		EECB711428323E12002A0DCD /* FollowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB711328323E12002A0DCD /* FollowViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +63,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE3CF9B728324189000C8A56 /* NotificationsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHelper.swift; sourceTree = "<group>"; };
+		EE3CF9B92832572D000C8A56 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		EE3CF9BB2832573C000C8A56 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		EE3CF9BE28325785000C8A56 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EE3CF9C128326261000C8A56 /* FollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
+		EE3CF9C328326291000C8A56 /* FollowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCoordinator.swift; sourceTree = "<group>"; };
+		EE3CF9CD28328315000C8A56 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		EE3CF9D2283290C1000C8A56 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		EE3CF9D72832C558000C8A56 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		EECB70A42830F829002A0DCD /* GitHubUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECB70A72830F829002A0DCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EECB70A92830F829002A0DCD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EECB70AB2830F829002A0DCD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EECB70AE2830F82A002A0DCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EECB70AB2830F829002A0DCD /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		EECB70B02830F82B002A0DCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EECB70B32830F82B002A0DCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EECB70B52830F82B002A0DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +83,19 @@
 		EECB70C42830F82B002A0DCD /* GitHubUserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubUserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECB70C82830F82B002A0DCD /* GitHubUserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUserUITests.swift; sourceTree = "<group>"; };
 		EECB70CA2830F82B002A0DCD /* GitHubUserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUserUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EECB70DD283125F4002A0DCD /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		EECB70E028312632002A0DCD /* PaginationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationType.swift; sourceTree = "<group>"; };
+		EECB70E228312D89002A0DCD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		EECB70E7283142B9002A0DCD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		EECB70E928314793002A0DCD /* GitHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
+		EECB70F228316A4D002A0DCD /* GitHubTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTarget.swift; sourceTree = "<group>"; };
+		EECB70F42831758C002A0DCD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EECB710428318333002A0DCD /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		EECB71062832223B002A0DCD /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
+		EECB710828322249002A0DCD /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		EECB710B28323141002A0DCD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		EECB711028323A94002A0DCD /* UIKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
+		EECB711328323E12002A0DCD /* FollowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +103,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECB70DB2830FF0C002A0DCD /* RxSwift in Frameworks */,
+				EECB70D92830FF0C002A0DCD /* RxCocoa in Frameworks */,
+				EE3CF9D12832847A000C8A56 /* Logging in Frameworks */,
+				EECB710228317F7F002A0DCD /* RxMoya in Frameworks */,
+				EECB710028317F7F002A0DCD /* Moya in Frameworks */,
+				EE3CF9B628324160000C8A56 /* SwiftMessages in Frameworks */,
+				EECB710F28323400002A0DCD /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +130,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE3CF9BD28325749000C8A56 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EECB70A72830F829002A0DCD /* AppDelegate.swift */,
+				EE3CF9BB2832573C000C8A56 /* AppCoordinator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EE3CF9D62832AD64000C8A56 /* CommonCells */ = {
+			isa = PBXGroup;
+			children = (
+				EECB710828322249002A0DCD /* UserCell.swift */,
+			);
+			path = CommonCells;
+			sourceTree = "<group>";
+		};
 		EECB709B2830F829002A0DCD = {
 			isa = PBXGroup;
 			children = (
@@ -99,10 +170,12 @@
 		EECB70A62830F829002A0DCD /* GitHubUser */ = {
 			isa = PBXGroup;
 			children = (
-				EECB70A72830F829002A0DCD /* AppDelegate.swift */,
-				EECB70A92830F829002A0DCD /* SceneDelegate.swift */,
-				EECB70AB2830F829002A0DCD /* ViewController.swift */,
-				EECB70AD2830F82A002A0DCD /* Main.storyboard */,
+				EE3CF9BD28325749000C8A56 /* App */,
+				EECB711228323B09002A0DCD /* Helpers + Extensions */,
+				EECB70F128316A3C002A0DCD /* Networking */,
+				EECB70E4283130F1002A0DCD /* Modules */,
+				EECB70DF28312618002A0DCD /* Protocols */,
+				EECB70DC283125C8002A0DCD /* Reusables */,
 				EECB70B02830F82B002A0DCD /* Assets.xcassets */,
 				EECB70B22830F82B002A0DCD /* LaunchScreen.storyboard */,
 				EECB70B52830F82B002A0DCD /* Info.plist */,
@@ -127,6 +200,95 @@
 			path = GitHubUserUITests;
 			sourceTree = "<group>";
 		};
+		EECB70DC283125C8002A0DCD /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				EE3CF9D2283290C1000C8A56 /* RoundedImageView.swift */,
+				EECB70AB2830F829002A0DCD /* BaseTableViewController.swift */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		EECB70DF28312618002A0DCD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EECB71062832223B002A0DCD /* CellType.swift */,
+				EE3CF9BE28325785000C8A56 /* Coordinator.swift */,
+				EECB70E028312632002A0DCD /* PaginationType.swift */,
+				EECB70DD283125F4002A0DCD /* ViewModelType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EECB70E4283130F1002A0DCD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EE3CF9D62832AD64000C8A56 /* CommonCells */,
+				EECB710A28322256002A0DCD /* Search */,
+				EECB711528323E16002A0DCD /* Follow */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EECB70F128316A3C002A0DCD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				EECB710328317FAB002A0DCD /* GitHub */,
+				EECB70F6283175EE002A0DCD /* Models */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		EECB70F6283175EE002A0DCD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EECB70F42831758C002A0DCD /* User.swift */,
+				EECB70E7283142B9002A0DCD /* APIError.swift */,
+				EECB710428318333002A0DCD /* SearchResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EECB710328317FAB002A0DCD /* GitHub */ = {
+			isa = PBXGroup;
+			children = (
+				EECB70E928314793002A0DCD /* GitHubService.swift */,
+				EECB70F228316A4D002A0DCD /* GitHubTarget.swift */,
+			);
+			path = GitHub;
+			sourceTree = "<group>";
+		};
+		EECB710A28322256002A0DCD /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				EECB70E228312D89002A0DCD /* SearchViewModel.swift */,
+				EE3CF9B92832572D000C8A56 /* SearchCoordinator.swift */,
+				EECB710B28323141002A0DCD /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		EECB711228323B09002A0DCD /* Helpers + Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EECB711028323A94002A0DCD /* UIKit+Extensions.swift */,
+				EE3CF9B728324189000C8A56 /* NotificationsHelper.swift */,
+				EE3CF9CD28328315000C8A56 /* Logger.swift */,
+				EE3CF9D72832C558000C8A56 /* Theme.swift */,
+			);
+			path = "Helpers + Extensions";
+			sourceTree = "<group>";
+		};
+		EECB711528323E16002A0DCD /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				EECB711328323E12002A0DCD /* FollowViewModel.swift */,
+				EE3CF9C328326291000C8A56 /* FollowCoordinator.swift */,
+				EE3CF9C128326261000C8A56 /* FollowViewController.swift */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,6 +296,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EECB70CE2830F82B002A0DCD /* Build configuration list for PBXNativeTarget "GitHubUser" */;
 			buildPhases = (
+				EE3CF9CC28327A6D000C8A56 /* SwiftLint */,
 				EECB70A02830F829002A0DCD /* Sources */,
 				EECB70A12830F829002A0DCD /* Frameworks */,
 				EECB70A22830F829002A0DCD /* Resources */,
@@ -143,6 +306,15 @@
 			dependencies = (
 			);
 			name = GitHubUser;
+			packageProductDependencies = (
+				EECB70D82830FF0C002A0DCD /* RxCocoa */,
+				EECB70DA2830FF0C002A0DCD /* RxSwift */,
+				EECB70FF28317F7F002A0DCD /* Moya */,
+				EECB710128317F7F002A0DCD /* RxMoya */,
+				EECB710E28323400002A0DCD /* Kingfisher */,
+				EE3CF9B528324160000C8A56 /* SwiftMessages */,
+				EE3CF9D02832847A000C8A56 /* Logging */,
+			);
 			productName = GitHubUser;
 			productReference = EECB70A42830F829002A0DCD /* GitHubUser.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +387,13 @@
 				Base,
 			);
 			mainGroup = EECB709B2830F829002A0DCD;
+			packageReferences = (
+				EECB70D72830FF0C002A0DCD /* XCRemoteSwiftPackageReference "RxSwift" */,
+				EECB70FE28317F7E002A0DCD /* XCRemoteSwiftPackageReference "Moya" */,
+				EECB710D28323400002A0DCD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				EE3CF9B428324160000C8A56 /* XCRemoteSwiftPackageReference "SwiftMessages" */,
+				EE3CF9CF2832847A000C8A56 /* XCRemoteSwiftPackageReference "swift-log" */,
+			);
 			productRefGroup = EECB70A52830F829002A0DCD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +412,6 @@
 			files = (
 				EECB70B42830F82B002A0DCD /* LaunchScreen.storyboard in Resources */,
 				EECB70B12830F82B002A0DCD /* Assets.xcassets in Resources */,
-				EECB70AF2830F82A002A0DCD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +431,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EE3CF9CC28327A6D000C8A56 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EECB70A02830F829002A0DCD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EECB70AC2830F829002A0DCD /* ViewController.swift in Sources */,
+				EE3CF9C228326261000C8A56 /* FollowViewController.swift in Sources */,
+				EECB711128323A94002A0DCD /* UIKit+Extensions.swift in Sources */,
+				EECB70AC2830F829002A0DCD /* BaseTableViewController.swift in Sources */,
+				EECB71072832223B002A0DCD /* CellType.swift in Sources */,
+				EE3CF9CE28328315000C8A56 /* Logger.swift in Sources */,
+				EECB70E328312D89002A0DCD /* SearchViewModel.swift in Sources */,
+				EECB710C28323141002A0DCD /* SearchViewController.swift in Sources */,
+				EECB70E8283142B9002A0DCD /* APIError.swift in Sources */,
+				EE3CF9BF28325785000C8A56 /* Coordinator.swift in Sources */,
+				EE3CF9D82832C558000C8A56 /* Theme.swift in Sources */,
+				EE3CF9BC2832573C000C8A56 /* AppCoordinator.swift in Sources */,
 				EECB70A82830F829002A0DCD /* AppDelegate.swift in Sources */,
-				EECB70AA2830F829002A0DCD /* SceneDelegate.swift in Sources */,
+				EECB70DE283125F4002A0DCD /* ViewModelType.swift in Sources */,
+				EECB711428323E12002A0DCD /* FollowViewModel.swift in Sources */,
+				EE3CF9C428326291000C8A56 /* FollowCoordinator.swift in Sources */,
+				EECB710528318333002A0DCD /* SearchResponse.swift in Sources */,
+				EE3CF9D3283290C1000C8A56 /* RoundedImageView.swift in Sources */,
+				EECB70F328316A4D002A0DCD /* GitHubTarget.swift in Sources */,
+				EECB710928322249002A0DCD /* UserCell.swift in Sources */,
+				EECB70E128312632002A0DCD /* PaginationType.swift in Sources */,
+				EECB70F52831758C002A0DCD /* User.swift in Sources */,
+				EE3CF9B828324189000C8A56 /* NotificationsHelper.swift in Sources */,
+				EE3CF9BA2832572D000C8A56 /* SearchCoordinator.swift in Sources */,
+				EECB70EA28314793002A0DCD /* GitHubService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +517,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EECB70AD2830F82A002A0DCD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EECB70AE2830F82A002A0DCD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EECB70B22830F82B002A0DCD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +654,6 @@
 				INFOPLIST_FILE = GitHubUser/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +681,6 @@
 				INFOPLIST_FILE = GitHubUser/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -602,6 +812,87 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE3CF9B428324160000C8A56 /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftKickMobile/SwiftMessages";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		EE3CF9CF2832847A000C8A56 /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		EECB70D72830FF0C002A0DCD /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		EECB70FE28317F7E002A0DCD /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		EECB710D28323400002A0DCD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE3CF9B528324160000C8A56 /* SwiftMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE3CF9B428324160000C8A56 /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			productName = SwiftMessages;
+		};
+		EE3CF9D02832847A000C8A56 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE3CF9CF2832847A000C8A56 /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+		EECB70D82830FF0C002A0DCD /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EECB70D72830FF0C002A0DCD /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		EECB70DA2830FF0C002A0DCD /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EECB70D72830FF0C002A0DCD /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		EECB70FF28317F7F002A0DCD /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EECB70FE28317F7E002A0DCD /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		EECB710128317F7F002A0DCD /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EECB70FE28317F7E002A0DCD /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		EECB710E28323400002A0DCD /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EECB710D28323400002A0DCD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EECB709C2830F829002A0DCD /* Project object */;
 }
