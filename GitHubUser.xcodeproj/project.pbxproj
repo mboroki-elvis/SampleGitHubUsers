@@ -24,7 +24,11 @@
 		EE864BD42833DD3F00AE6011 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EE864BD32833DD3F00AE6011 /* RxCocoa */; };
 		EE864BD62833DD3F00AE6011 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EE864BD52833DD3F00AE6011 /* RxSwift */; };
 		EE864BD82833DD3F00AE6011 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = EE864BD72833DD3F00AE6011 /* RxTest */; };
-		EE864BDA2833DDB200AE6011 /* FollowViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE864BD92833DDB200AE6011 /* FollowViewModelTests.swift */; };
+		EE864BDA2833DDB200AE6011 /* FollowingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE864BD92833DDB200AE6011 /* FollowingViewModelTests.swift */; };
+		EE864BDC2833DED600AE6011 /* FollowerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE864BDB2833DED600AE6011 /* FollowerViewModelTests.swift */; };
+		EE864BEB28340CD000AE6011 /* GitHubUser.json in Resources */ = {isa = PBXBuildFile; fileRef = EE81E1462833D6B2007D8A12 /* GitHubUser.json */; };
+		EE864BEC28340CD600AE6011 /* GitHubUserFollower.json in Resources */ = {isa = PBXBuildFile; fileRef = EE81E1482833D6B2007D8A12 /* GitHubUserFollower.json */; };
+		EE864BED28340CD900AE6011 /* GitHubeUserFollowing.json in Resources */ = {isa = PBXBuildFile; fileRef = EE81E1472833D6B2007D8A12 /* GitHubeUserFollowing.json */; };
 		EECB70A82830F829002A0DCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70A72830F829002A0DCD /* AppDelegate.swift */; };
 		EECB70AC2830F829002A0DCD /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB70AB2830F829002A0DCD /* BaseTableViewController.swift */; };
 		EECB70B12830F82B002A0DCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECB70B02830F82B002A0DCD /* Assets.xcassets */; };
@@ -82,7 +86,8 @@
 		EE81E1472833D6B2007D8A12 /* GitHubeUserFollowing.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GitHubeUserFollowing.json; sourceTree = "<group>"; };
 		EE81E1482833D6B2007D8A12 /* GitHubUserFollower.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GitHubUserFollower.json; sourceTree = "<group>"; };
 		EE81E1492833D8F8007D8A12 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
-		EE864BD92833DDB200AE6011 /* FollowViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewModelTests.swift; sourceTree = "<group>"; };
+		EE864BD92833DDB200AE6011 /* FollowingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingViewModelTests.swift; sourceTree = "<group>"; };
+		EE864BDB2833DED600AE6011 /* FollowerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerViewModelTests.swift; sourceTree = "<group>"; };
 		EECB70A42830F829002A0DCD /* GitHubUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECB70A72830F829002A0DCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EECB70AB2830F829002A0DCD /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
@@ -209,10 +214,11 @@
 		EECB70BD2830F82B002A0DCD /* GitHubUserTests */ = {
 			isa = PBXGroup;
 			children = (
-				EE81E13D2833C9B9007D8A12 /* MockGitHubService.swift */,
-				EE864BD92833DDB200AE6011 /* FollowViewModelTests.swift */,
-				EECB70BE2830F82B002A0DCD /* SearchViewModelTests.swift */,
 				EE81E1452833D6B2007D8A12 /* TestData */,
+				EE81E13D2833C9B9007D8A12 /* MockGitHubService.swift */,
+				EECB70BE2830F82B002A0DCD /* SearchViewModelTests.swift */,
+				EE864BDB2833DED600AE6011 /* FollowerViewModelTests.swift */,
+				EE864BD92833DDB200AE6011 /* FollowingViewModelTests.swift */,
 			);
 			path = GitHubUserTests;
 			sourceTree = "<group>";
@@ -441,8 +447,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE864BEB28340CD000AE6011 /* GitHubUser.json in Resources */,
 				EECB70B42830F82B002A0DCD /* LaunchScreen.storyboard in Resources */,
 				EECB70B12830F82B002A0DCD /* Assets.xcassets in Resources */,
+				EE864BEC28340CD600AE6011 /* GitHubUserFollower.json in Resources */,
+				EE864BED28340CD900AE6011 /* GitHubeUserFollowing.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,9 +529,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE864BDC2833DED600AE6011 /* FollowerViewModelTests.swift in Sources */,
 				EECB70BF2830F82B002A0DCD /* SearchViewModelTests.swift in Sources */,
 				EE81E13E2833C9B9007D8A12 /* MockGitHubService.swift in Sources */,
-				EE864BDA2833DDB200AE6011 /* FollowViewModelTests.swift in Sources */,
+				EE864BDA2833DDB200AE6011 /* FollowingViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

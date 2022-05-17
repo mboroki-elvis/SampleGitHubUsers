@@ -7,7 +7,11 @@
 
 import Foundation
 
-enum APIError: Error {
+enum APIError: Error, Equatable {
+    static func == (lhs: APIError, rhs: APIError) -> Bool {
+        return lhs.localizedDescription == rhs.localizedDescription
+    }
+    
     case underlyingError(Error)
     case notFound
     case unkowned

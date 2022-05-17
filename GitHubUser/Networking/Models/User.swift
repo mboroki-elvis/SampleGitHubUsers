@@ -9,7 +9,11 @@ import Foundation
 
 // MARK: model
 
-class User: Codable {
+class User: Codable, Equatable {
+    static func == (lhs: User, rhs: User) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     enum CodingKeys: String, CodingKey {
         case login
         case id

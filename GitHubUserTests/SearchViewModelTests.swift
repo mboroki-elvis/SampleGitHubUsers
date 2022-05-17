@@ -11,27 +11,69 @@ import RxSwift
 import RxTest
 import XCTest
 
-class SearchViewModelTests: XCTestCase {
+private class SearchViewModelTests: XCTestCase {
     // MARK: Internal
 
-    var disposeBag: DisposeBag!
-    var scheduler: TestScheduler!
-    var viewModel: SearchViewModel!
-
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.disposeBag = DisposeBag()
+        self.service = MockGitHubService()
+        self.scheduler = TestScheduler(initialClock: 0)
+        self.viewModel = SearchViewModel(githubService: self.service)
+        try super.setUpWithError()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        try super.tearDownWithError()
+        self.viewModel = nil
+        self.service = nil
+        self.scheduler = nil
+        self.disposeBag = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testSearchWithSuccess() throws {
+        // create scheduler
+        let observer = self.scheduler.createObserver([User].self)
+        let expected = Bundle.main.decode(SearchResponse.self, from: "GitHubUser.json").items
+
+        // bind the result
+        self.viewModel
+            .output
+            .content?
+            .drive(observer)
+            .disposed(by: self.disposeBag)
+
+        // mock a search
+        self.scheduler
+            .createColdObservable([.next(10, "tom")])
+            .bind(to: self.viewModel.input.search)
+            .disposed(by: self.disposeBag)
+
+        self.scheduler.start()
+
+        XCTAssertEqual(observer.events, [.next(0, []), .next(10, expected)])
+    }
+
+    func testSearchWithError() throws {
+        let observer = self.scheduler.createObserver(APIError.self)
+
+        // bind the result
+        self.viewModel
+            .output
+            .error
+            .drive { observable in
+                observable.flatMap { error in
+                    observer.onNext(error)
+                }
+            }.disposed(by: self.disposeBag)
+
+        // mock a search
+        self.scheduler
+            .createColdObservable([.next(5, ""), .next(10, ""), .next(15, "")])
+            .bind(to: self.viewModel.input.search)
+            .disposed(by: self.disposeBag)
+
+        self.scheduler.start()
+        XCTAssertEqual(observer.events, [.next(0, .notFound), .next(5, .notFound), .next(10, .notFound), .next(15, .notFound)])
     }
 
     func testPerformanceExample() throws {
@@ -41,7 +83,11 @@ class SearchViewModelTests: XCTestCase {
         }
     }
 
-    // MARK: Fileprivate
+    // MARK: Private
 
-    fileprivate var service: MockGitHubService!
+    private var disposeBag: DisposeBag!
+    private var scheduler: TestScheduler!
+    private var viewModel: SearchViewModel!
+
+    private var service: MockGitHubService!
 }

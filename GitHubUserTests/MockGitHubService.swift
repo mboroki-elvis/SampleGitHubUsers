@@ -27,6 +27,7 @@ final class MockGitHubService: GitHubService {
     }
 
     func search(search model: GitHubTarget.GitHubSearchModel) -> Single<SearchResponse> {
+        guard !model.queryString.isEmpty else { return .never() }
         let response = Bundle.main.decode(SearchResponse.self, from: "GitHubUser.json")
         return .just(response)
     }
