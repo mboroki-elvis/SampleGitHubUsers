@@ -64,7 +64,6 @@ private class SearchViewModelTests: XCTestCase {
             .error
             .drive { observable in
                 observable.flatMap { error in
-                    print("error: \(error)")
                     observer.onNext(error)
                 }
             }.disposed(by: disposeBag)

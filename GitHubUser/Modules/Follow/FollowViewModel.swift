@@ -9,6 +9,7 @@ import Foundation
 import RxCocoa
 import RxRelay
 import RxSwift
+import UIKit
 
 final class FollowViewModel: NSObject, ViewModelType {
     // MARK: Lifecycle
@@ -82,15 +83,17 @@ final class FollowViewModel: NSObject, ViewModelType {
     }
 
     private func makeAPICall() {
-        let observerble: Single<[User]>
+        var observerble: Single<[User]>
         switch isFollowers {
         case true:
             observerble = githubService.followers(user: user.login)
         case false:
             observerble = githubService.following(user: user.login)
         }
+        if !UIApplication.shared.isRunningTestCases {
+            observerble = observerble.observe(on: MainScheduler.instance)
+        }
         observerble
-            .observe(on: MainScheduler.instance)
             .subscribe(
                 onSuccess: { [weak self] in
                     guard let self = self else { return }
