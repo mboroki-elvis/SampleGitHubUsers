@@ -85,6 +85,7 @@ final class SearchViewModel: NSObject, ViewModelType, PaginationType {
     private func bindSearch() {
         input
             .search
+            .asObservable()
             .filter { !$0.isEmpty }
             .distinctUntilChanged()
             .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
