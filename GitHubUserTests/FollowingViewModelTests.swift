@@ -14,29 +14,34 @@ import XCTest
 final class FollowingViewModelTests: XCTestCase {
     // MARK: Internal
 
-    override func setUpWithError() throws {
-        self.disposeBag = DisposeBag()
-        self.service = MockGitHubService()
-        self.scheduler = TestScheduler(initialClock: 0)
+    override func setUpWithError() throws {}
+
+    override func tearDownWithError() throws {}
+
+    func testFollowingsFound() throws {
+        // create scheduler
+        let disposeBag = DisposeBag()
+        let service = MockGitHubService()
+        let scheduler = TestScheduler(initialClock: 0)
+
+        let observer = scheduler.createObserver([User].self)
+        let expected = Bundle.main.decode([User].self, from: "GitHubeUserFollowing.json")
+        let source = scheduler.createColdObservable([.next(5, ()), .completed(10)])
+
         let response = Bundle.main.decode(SearchResponse.self, from: "GitHubUser.json")
         if let model = response.items.first {
-            self.viewModel = FollowViewModel(isFollowers: false, user: model, githubService: self.service)
+            let viewModel = FollowViewModel(isFollowers: false, user: model, githubService: service)
+
+            // mock a search
+            source.bind(to: viewModel.input.viewDidLoad).disposed(by: disposeBag)
+
+            // bind the result
+            viewModel.output.content?.drive(observer).disposed(by: disposeBag)
+
+            scheduler.start()
+
+            XCTAssertEqual(observer.events, [.next(5, expected)])
         }
-    }
-
-    override func tearDownWithError() throws {
-        self.viewModel = nil
-        self.service = nil
-        self.scheduler = nil
-        self.disposeBag = nil
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
     }
 
     func testPerformanceExample() throws {
