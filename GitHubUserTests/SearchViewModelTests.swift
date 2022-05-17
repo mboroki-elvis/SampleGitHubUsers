@@ -5,10 +5,18 @@
 //  Created by Elvis Mwenda on 15/05/2022.
 //
 
-import XCTest
 @testable import GitHubUser
+import RxBlocking
+import RxSwift
+import RxTest
+import XCTest
 
-class GitHubUserTests: XCTestCase {
+class SearchViewModelTests: XCTestCase {
+    // MARK: Internal
+
+    var disposeBag: DisposeBag!
+    var scheduler: TestScheduler!
+    var viewModel: SearchViewModel!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -33,4 +41,7 @@ class GitHubUserTests: XCTestCase {
         }
     }
 
+    // MARK: Fileprivate
+
+    fileprivate var service: MockGitHubService!
 }
