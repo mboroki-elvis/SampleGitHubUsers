@@ -1,21 +1,34 @@
 //
-//  GitHubUserTests.swift
+//  FollowingViewModelTests.swift
 //  GitHubUserTests
 //
 //  Created by Elvis Mwenda on 15/05/2022.
 //
 
-import XCTest
 @testable import GitHubUser
+import RxBlocking
+import RxSwift
+import RxTest
+import XCTest
 
-class GitHubUserTests: XCTestCase {
+final class FollowingViewModelTests: XCTestCase {
+    // MARK: Internal
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.disposeBag = DisposeBag()
+        self.service = MockGitHubService()
+        self.scheduler = TestScheduler(initialClock: 0)
+        let response = Bundle.main.decode(SearchResponse.self, from: "GitHubUser.json")
+        if let model = response.items.first {
+            self.viewModel = FollowViewModel(isFollowers: false, user: model, githubService: self.service)
+        }
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.viewModel = nil
+        self.service = nil
+        self.scheduler = nil
+        self.disposeBag = nil
     }
 
     func testExample() throws {
@@ -33,4 +46,11 @@ class GitHubUserTests: XCTestCase {
         }
     }
 
+    // MARK: Private
+
+    private var disposeBag: DisposeBag!
+    private var scheduler: TestScheduler!
+    private var viewModel: FollowViewModel!
+
+    private var service: MockGitHubService!
 }

@@ -5,10 +5,10 @@
 //  Created by Elvis Mwenda on 15/05/2022.
 //
 
-import Foundation
 import RxCocoa
 import RxRelay
 import RxSwift
+import UIKit
 
 final class SearchViewModel: NSObject, ViewModelType, PaginationType {
     // MARK: Lifecycle
@@ -83,12 +83,17 @@ final class SearchViewModel: NSObject, ViewModelType, PaginationType {
     private var searchString: BehaviorRelay<String> = .init(value: "")
 
     private func bindSearch() {
-        input
-            .search
-            .asObservable()
-            .filter { !$0.isEmpty }
-            .distinctUntilChanged()
-            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
+        let observable: Observable<String>
+        if UIApplication.shared.isRunningTestCases {
+            observable = input.search.distinctUntilChanged()
+        } else {
+            observable = input
+                .search
+                .filter { !$0.isEmpty }
+                .distinctUntilChanged()
+                .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
+        }
+        observable
             .flatMapLatest { [unowned self] term -> Single<SearchResponse> in
                 self.input.errorSubject.onNext(nil)
                 self.searchString.accept(term)
@@ -101,7 +106,7 @@ final class SearchViewModel: NSObject, ViewModelType, PaginationType {
                 self.input.loadingSubject.onNext(false)
                 if let items = model.element?.items, !items.isEmpty {
                     self.maxValue = (model.element?.totalCount ?? .zero) / self.fetchPerPage
-                    var array =  self.input.contentSubject.value
+                    var array = self.input.contentSubject.value
                     array.append(contentsOf: items)
                     self.input.contentSubject.accept(array)
                 } else {
@@ -145,7 +150,7 @@ final class SearchViewModel: NSObject, ViewModelType, PaginationType {
                         onSuccess: { [weak self] in
                             guard let self = self else { return }
                             self.maxValue = $0.totalCount / self.fetchPerPage
-                            var array =  self.input.contentSubject.value
+                            var array = self.input.contentSubject.value
                             array.append(contentsOf: $0.items)
                             self.input.contentSubject.accept(array)
                             self.input.loadingSubject.onNext(false)
