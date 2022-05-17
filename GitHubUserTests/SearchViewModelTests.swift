@@ -53,7 +53,6 @@ private class SearchViewModelTests: XCTestCase {
         
         let observer = scheduler.createObserver(APIError.self)
         let source = scheduler.createColdObservable([.next(5, ""), .completed(10)])
-        
         let viewModel = SearchViewModel(githubService: service)
         
         // mock a search
@@ -65,12 +64,13 @@ private class SearchViewModelTests: XCTestCase {
             .error
             .drive { observable in
                 observable.flatMap { error in
+                    print("error: \(error)")
                     observer.onNext(error)
                 }
             }.disposed(by: disposeBag)
 
         scheduler.start()
-        XCTAssertEqual(observer.events, [.next(0, .notFound), .next(5, .notFound)])
+        XCTAssertEqual(observer.events, [.next(5, .notFound)])
     }
 
     func testPerformanceExample() throws {

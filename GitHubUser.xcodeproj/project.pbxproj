@@ -148,6 +148,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE1CC17928343C31006CFBA2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EECB711028323A94002A0DCD /* UIKit+Extensions.swift */,
+				EE81E1492833D8F8007D8A12 /* Bundle+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EE1CC17A28343C44006CFBA2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EE3CF9CD28328315000C8A56 /* Logger.swift */,
+				EE3CF9D72832C558000C8A56 /* Theme.swift */,
+				EE3CF9B728324189000C8A56 /* NotificationsHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		EE3CF9BD28325749000C8A56 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,11 +233,11 @@
 		EECB70BD2830F82B002A0DCD /* GitHubUserTests */ = {
 			isa = PBXGroup;
 			children = (
-				EE81E1452833D6B2007D8A12 /* TestData */,
 				EE81E13D2833C9B9007D8A12 /* MockGitHubService.swift */,
 				EECB70BE2830F82B002A0DCD /* SearchViewModelTests.swift */,
 				EE864BDB2833DED600AE6011 /* FollowerViewModelTests.swift */,
 				EE864BD92833DDB200AE6011 /* FollowingViewModelTests.swift */,
+				EE81E1452833D6B2007D8A12 /* TestData */,
 			);
 			path = GitHubUserTests;
 			sourceTree = "<group>";
@@ -303,11 +322,8 @@
 		EECB711228323B09002A0DCD /* Helpers + Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EECB711028323A94002A0DCD /* UIKit+Extensions.swift */,
-				EE81E1492833D8F8007D8A12 /* Bundle+Extension.swift */,
-				EE3CF9B728324189000C8A56 /* NotificationsHelper.swift */,
-				EE3CF9CD28328315000C8A56 /* Logger.swift */,
-				EE3CF9D72832C558000C8A56 /* Theme.swift */,
+				EE1CC17A28343C44006CFBA2 /* Helpers */,
+				EE1CC17928343C31006CFBA2 /* Extensions */,
 			);
 			path = "Helpers + Extensions";
 			sourceTree = "<group>";
