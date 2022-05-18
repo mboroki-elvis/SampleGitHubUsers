@@ -16,11 +16,36 @@ extension UITableViewCell {
 extension UIAlertAction {
     func applyStyling(with image: UIImage) {
         setValue(image, forKey: "image")
-        setValue(UIColor.black, forKey: "titleTextColor")
+        let color = UIColor { (UITraitCollection: UITraitCollection) -> UIColor in
+            if UITraitCollection.userInterfaceStyle == .dark {
+                return UIColor.white
+            } else {
+                return UIColor.black
+            }
+        }
+        setValue(color, forKey: "titleTextColor")
         setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
     }
 
     func styleTextColor(color: UIColor) {
         setValue(color, forKey: "titleTextColor")
+    }
+}
+
+extension UIAlertController {
+    func applyStyling(with title: String) {
+        let color = UIColor { (UITraitCollection: UITraitCollection) -> UIColor in
+            if UITraitCollection.userInterfaceStyle == .dark {
+                return UIColor.white
+            } else {
+                return UIColor.black
+            }
+        }
+        let titleFont = [
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16),
+            NSAttributedString.Key.foregroundColor: color
+        ]
+        let titleAttrString = NSMutableAttributedString(string: title, attributes: titleFont)
+        setValue(titleAttrString, forKey: "attributedTitle")
     }
 }

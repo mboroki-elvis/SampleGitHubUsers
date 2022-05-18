@@ -28,9 +28,10 @@ final class SearchCoordinator: Coordinator {
     // MARK: Private
 
     private func showFollowActionSheet(_ user: User) {
-        let alertController = UIAlertController(title: "\(user.login)'s follows & followings", message: nil, preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController.applyStyling(with: "\(user.login)'s follows & followings")
         let cancel = UIAlertAction(title: "Dismiss", style: .cancel)
-        cancel.styleTextColor(color: .black)
+        cancel.styleTextColor(color: .red)
         let followers = UIAlertAction(title: "Followers", style: .default) { [weak self] _ in
             guard let self = self else { return }
             self.goToFollow(isFollowers: true, user: user)
