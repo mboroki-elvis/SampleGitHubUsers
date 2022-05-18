@@ -16,6 +16,7 @@ enum NotificationsHelper {
     // MARK: Internal
 
     func show() {
+        SwiftMessages.defaultConfig.presentationStyle = .bottom
         // Instantiate a message view from the provided card view layout. SwiftMessages searches for nib
         // files in the main bundle first, so you can easily copy them into your project and make changes.
         let view = MessageView.viewFromNib(layout: .cardView)
@@ -33,9 +34,9 @@ enum NotificationsHelper {
         }
 
         view.configureDropShadow()
+        view.button?.isHidden = true
         view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
-        view.button = nil
         SwiftMessages.show(view: view)
     }
 }

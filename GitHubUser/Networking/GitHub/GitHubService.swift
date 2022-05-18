@@ -49,7 +49,6 @@ final class GitHubServiceImpl: GitHubService {
                 let decodedResponse = try decoder.decode(Response.self, from: response.data)
                 return .just(decodedResponse)
             } catch {
-                print(error)
                 log.error(.init(stringLiteral: error.localizedDescription))
                 return .error(error)
             }
