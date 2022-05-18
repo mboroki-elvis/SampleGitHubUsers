@@ -49,8 +49,6 @@ final class UserCell: UITableViewCell, CellType {
             userNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             userNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
         ]
-        profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
-        print(profileImageView.frame.width / 2)
         NSLayoutConstraint.activate(constraints)
     }
 
@@ -60,7 +58,7 @@ final class UserCell: UITableViewCell, CellType {
         let imageView = RoundedImageView()
         imageView.clipsToBounds = true
         imageView.layer.masksToBounds = false
-        imageView.layer.cornerRadius = imageView.frame.size.width / 2
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
