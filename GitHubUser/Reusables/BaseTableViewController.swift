@@ -58,7 +58,7 @@ class BaseTableViewController<T: ViewModelType>: UIViewController, UITableViewDe
     }
 
     private func layout() {
-        view.backgroundColor = .systemGroupedBackground
+        view.backgroundColor = .white
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),

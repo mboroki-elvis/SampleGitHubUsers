@@ -29,5 +29,9 @@ enum Theme {
             NSAttributedString.Key.foregroundColor: UIColor.black,
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)
         ]
+        UISearchBar.appearance().barStyle = .default
+        UISearchBar.appearance().barTintColor = .white
+        UISearchBar.appearance().searchBarStyle = .minimal
+        UISearchBar.appearance().searchTextField.backgroundColor = .white
     }
 }

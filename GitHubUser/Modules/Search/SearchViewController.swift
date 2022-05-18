@@ -33,6 +33,7 @@ final class SearchViewController: BaseTableViewController<SearchViewModel> {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search users..."
+        searchController.searchBar.searchTextField.backgroundColor = .white
         navigationItem.searchController = searchController
     }
 
