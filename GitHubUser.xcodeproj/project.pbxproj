@@ -176,14 +176,6 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		EE3CF9D62832AD64000C8A56 /* CommonCells */ = {
-			isa = PBXGroup;
-			children = (
-				EECB710828322249002A0DCD /* UserCell.swift */,
-			);
-			path = CommonCells;
-			sourceTree = "<group>";
-		};
 		EE81E1452833D6B2007D8A12 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,7 +214,7 @@
 				EECB70F128316A3C002A0DCD /* Networking */,
 				EECB70E4283130F1002A0DCD /* Modules */,
 				EECB70DF28312618002A0DCD /* Protocols */,
-				EECB70DC283125C8002A0DCD /* Reusables */,
+				EECB70DC283125C8002A0DCD /* ReusableViews */,
 				EECB70B02830F82B002A0DCD /* Assets.xcassets */,
 				EECB70B22830F82B002A0DCD /* LaunchScreen.storyboard */,
 				EECB70B52830F82B002A0DCD /* Info.plist */,
@@ -251,13 +243,14 @@
 			path = GitHubUserUITests;
 			sourceTree = "<group>";
 		};
-		EECB70DC283125C8002A0DCD /* Reusables */ = {
+		EECB70DC283125C8002A0DCD /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				EECB710828322249002A0DCD /* UserCell.swift */,
 				EE3CF9D2283290C1000C8A56 /* RoundedImageView.swift */,
 				EECB70AB2830F829002A0DCD /* BaseTableViewController.swift */,
 			);
-			path = Reusables;
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 		EECB70DF28312618002A0DCD /* Protocols */ = {
@@ -274,7 +267,6 @@
 		EECB70E4283130F1002A0DCD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				EE3CF9D62832AD64000C8A56 /* CommonCells */,
 				EECB710A28322256002A0DCD /* Search */,
 				EECB711528323E16002A0DCD /* Follow */,
 			);
